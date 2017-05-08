@@ -1,5 +1,12 @@
-<ul>
-  {{#each users as |user|}}
-    <li><img class="list-users-avatar" src={{user.avatar}} /> {{user.fullName}}</li>
-  {{/each}}
-</ul>
+<div class="list-users-component">
+  <h1 class="title">Spark Library Users</h1>
+  <hr />
+  <ul class="user-list">
+    {{#each users as |user|}}
+      <li class="user">
+        <img class="user__avatar" src={{user.avatar}} /><br />
+        <h3 class="user__name">{{user.fullName}}</h3>
+      </li>
+    {{/each}}
+  </ul>
+</div>

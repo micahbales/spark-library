@@ -1,0 +1,26 @@
+.list-users-component {
+  margin: 0 auto;
+  background-color: #F8F8F8;
+  border-radius: .5%;
+  padding: 20px 0px;
+  max-width: 800px;
+
+  h1 {
+    text-align: center;
+  }
+
+  .user-list {
+    margin-top: 30px;
+    text-align: center;
+
+    .user {
+      list-style-type: none;
+      margin: 20px 0px;
+
+      .user__avatar {
+        border-radius: 50%;
+        height: 150px;
+      }
+    }
+  }
+}
