@@ -8,5 +8,6 @@ export default DS.Model.extend({
   favorite: DS.attr('boolean'),
   createdAt: DS.attr('date', {
     defaultValue() { return new Date(); }
-  })
+  }),
+  owner: DS.belongsTo('user')
 });
