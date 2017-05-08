@@ -1,5 +1,19 @@
 export default function() {
 
+  this.get('/users');
+  this.get('/users/:id');
+  this.post('/users');
+  this.put('/users/:id');
+  this.patch('/users/:id');
+  this.del('/users/:id');
+
+  // this.get('/users', (schema, request) => {
+  //   return schema.users.all();
+  // });
+
+  // this.urlPrefix = 'http://localhost:8080';
+  // this.namespace = 'api';
+
   // These comments are here to help you get started. Feel free to delete them.
 
   /*
