@@ -15,7 +15,12 @@
       <ul class="nav navbar-nav">
         <li>{{#link-to "index"}}About{{/link-to}}</li>
         <li>{{#link-to "users"}}Users{{/link-to}}</li>
-        <li>{{#link-to "index"}}Sign Up{{/link-to}}</li>
+        {{#if session.isAuthenticated}}
+          <li><a {{action "invalidateSession"}}>Log Out</a></li>
+        {{else}}
+          <li>{{#link-to "index"}}Sign Up{{/link-to}}</li>
+          <li>{{#link-to "index"}}Log In{{/link-to}}</li>
+        {{/if}}
       </ul>
 
       {{#if isLoggedIn}} <!-- show this only if there is a logged in user -->
