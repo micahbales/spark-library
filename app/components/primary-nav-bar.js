@@ -9,9 +9,9 @@ export default Ember.Component.extend({
       Ember.$(currentTarget).addClass('active');
     });
 
-    Ember.$('.navbar-brand').on('click', ({currentTarget}) => {
+    Ember.$('.navbar-brand').on('click', (/*{currentTarget}*/) => {
       Ember.$('.primary-nav-bar .navbar-nav li.active').removeClass('active');
       Ember.$('.primary-nav-bar .navbar-nav li').first().addClass('active');
-    })
+    });
   }
 });
