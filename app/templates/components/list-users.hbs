@@ -5,7 +5,9 @@
     {{#each users as |user|}}
       <li class="user">
         <img class="user__avatar" src={{user.avatar}} /><br />
-        <h3 class="user__name">{{user.fullName}}</h3>
+        <h3 class="user__name">
+          {{user.fullName}} {{#if user.isAdmin}}(Admin){{/if}}
+        </h3>
       </li>
     {{/each}}
   </ul>
