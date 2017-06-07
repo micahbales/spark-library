@@ -1,1 +1,8 @@
-{{outlet}}
+<h1>Sign Up</h1>
+<form {{action "signupUser" on="submit"}}>
+  {{input type="text" name="email" placeholder="Email" value=email}}
+  {{input type="password" name="password" placeholder="Password" value=password}}
+  {{input type="password" name="repeatPassword" placeholder="Repeat Password" value=repeatPassword}}
+  <div class="error"></div>
+  <button type="submit" class="btn big btn-primary">Sign Up</button>
+</form>
