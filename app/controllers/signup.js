@@ -32,10 +32,24 @@ export default Ember.Controller.extend({
       let password = this.get('password');
       let repeatPassword = this.get('repeatPassword');
 
-      // reset any previous error message
-      Ember.$('.error').text('');
-
+      //validate inputs
       this.prevalidateCredentials(email, password, repeatPassword);
+
+      // add new user to ember store
+      let newUser = this.get('store').createRecord('user', {
+        email: email,
+        password: password,
+        firstName: "firstName",
+        lastName: "lastName",
+        avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/madebyvadim/128.jpg",
+        isAdmin: "false"
+      });
+
+      // persist new user to the database
+      let self = this;
+      newUser.save().then(function() {
+        return self.toast.success(`User ${email} created!`);
+      });
     }
   }
 });
