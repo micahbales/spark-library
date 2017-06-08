@@ -7,15 +7,15 @@ export default Ember.Controller.extend({
   prevalidateCredentials(email, password, repeatPassword) {
     // email must be valid
     if (!this.validateEmailAddress(email)) {
-      return Ember.$('.error').text('Invalid email');
+      return this.toast.error('Invalid email');
     }
     // passwords must match
     if (password !== repeatPassword) {
-      return Ember.$('.error').text('Passwords do not match');
+      return this.toast.error('Passwords do not match');
     }
     // password must be long enough
     if (password.length < 8) {
-      return Ember.$('.error').text('Password must be at least 8 characters long');
+      return this.toast.error('Password must be at least 8 characters long');
     }
   },
   validateEmailAddress(email) {
