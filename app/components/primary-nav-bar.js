@@ -13,5 +13,11 @@ export default Ember.Component.extend({
       Ember.$('.primary-nav-bar .navbar-nav li.active').removeClass('active');
       Ember.$('.primary-nav-bar .navbar-nav li').first().addClass('active');
     });
+  },
+  session: Ember.inject.service('session'),
+  actions: {
+    invalidateSession() {
+      this.get('session').invalidate();
+    }
   }
 });
